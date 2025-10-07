@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Book Maldives — Exclusive Trips</title>
+
+  <!-- Bootstrap & AOS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --primary:#ff6f3c;
+      --accent:#ffbc42;
+      --glow-start:#ff5f6d;
+      --glow-end:#ffc371;
+      --muted:#6c7a7a;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin:0;
+      background: linear-gradient(180deg,#fffaf0 0%,#fef7f0 100%);
+      color:var(--primary);
+    }
+
+    /* Header */
+    .topbar {
+      background: linear-gradient(90deg,var(--primary), var(--accent));
+      color:white;
+    }
+    .brand { font-weight:700; color:white; text-decoration:none; }
+    .enquire-btn {
+      background: linear-gradient(90deg,var(--glow-start), var(--glow-end));
+      color:#fff; border-radius:25px; padding:.4rem .9rem; font-weight:600;
+      box-shadow:0 6px 18px rgba(255,140,122,0.18);
+      transition:transform .18s;
+    }
+    .enquire-btn:hover { transform:translateY(-3px); }
+
+    /* Hero */
+    .city-hero {
+      position:relative;
+      background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80');
+      background-size:cover; background-position:center;
+      min-height:44vh;
+      display:flex; align-items:center;
+      color:white;
+    }
+    .hero-overlay { position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,0.35), rgba(0,0,0,0.2)); }
+    .hero-content { position:relative; z-index:2; padding:4rem 1rem; }
+
+    .badge-accent {
+      background: linear-gradient(90deg,var(--primary),var(--accent));
+      color:#fff; padding:.35rem .6rem; border-radius:8px; font-weight:700;
+    }
+
+    /* Content */
+    .muted { color:var(--muted); }
+    .dest-card { border-radius:12px; overflow:hidden; border:1px solid rgba(3,22,39,0.04); background:#fff; transition: transform .35s, box-shadow .35s; }
+    .dest-card:hover { transform: translateY(-8px); box-shadow:0 20px 40px rgba(255,111,60,0.08); }
+
+    /* Booking sidebar */
+    .booking-card { position:sticky; top:110px; border-radius:12px; padding:1.2rem; background:linear-gradient(180deg,#fff,#fff7f0); box-shadow:0 12px 25px rgba(3,22,39,0.06); }
+    .price { font-size:1.75rem; font-weight:800; color:var(--primary); }
+    .thin { font-weight:500; color:var(--muted); }
+
+    /* Animations */
+    @keyframes floatUp {
+      0% { opacity:0; transform:translateY(20px); }
+      100% { opacity:1; transform:translateY(0); }
+    }
+    .fade-in-up { animation: floatUp .8s ease both; }
+
+    /* Gallery */
+    .gallery img { width:100%; height:160px; object-fit:cover; border-radius:8px; }
+
+    /* Itinerary timeline */
+    .timeline { border-left:3px solid rgba(3,22,39,0.06); padding-left:1rem; }
+    .timeline .item { position:relative; margin-bottom:1.4rem; padding-left:1rem; }
+    .timeline .item::before { content:''; position:absolute; left:-1.55rem; top:4px; width:12px; height:12px; background:linear-gradient(90deg,var(--primary),var(--accent)); border-radius:50%; box-shadow:0 3px 8px rgba(0,0,0,0.06); }
+
+    /* Responsive tweaks */
+    @media (max-width:991px) {
+      .booking-card { position:relative; top:auto; margin-top:1.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="topbar py-2">
+    <div class="container d-flex align-items-center justify-content-between">
+      <a href="Exclusive Trrips.html" class="navbar-brand">
+      <img src="C:\Users\vsvve\OneDrive\Desktop\Exclusive Trips Website/etlogo.png" alt="Exclusive Trips Logo" width="200" height="50">
+      </a>
+
+      <div class="d-none d-md-flex align-items-center gap-3">
+        <a href="Exclusive Trrips.html" class="text-white text-decoration-none">Home</a>
+        <a href="#about" class="text-white text-decoration-none">About</a>
+        <a href="#contact" class="text-white text-decoration-none">Contact</a>
+        <a class="enquire-btn ms-2" href="#booking">Enquire Now</a>
+      </div>
+
+      <button class="btn btn-outline-light d-md-none" data-bs-toggle="collapse" data-bs-target="#mobileMenu">
+        <i class="bi bi-list"></i>
+      </button>
+    </div>
+
+    <div class="collapse" id="mobileMenu">
+      <div class="container py-2 d-md-none">
+        <a class="d-block text-white mb-2" href="#destinations">Destinations</a>
+        <a class="d-block text-white mb-2" href="#">Packages</a>
+        <a class="d-block text-white mb-2" href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="city-hero mt-0">
+    <div class="hero-overlay"></div>
+    <div class="container hero-content" data-aos="fade-right">
+      <div class="row align-items-center">
+        <div class="col-lg-8">
+          <h1 class="display-5 fw-bold">Maldives</h1>
+          <p class="lead mb-3">Turquoise waters, overwater villas, and pristine white beaches — immerse yourself in tropical luxury.</p>
+
+          <div class="d-flex gap-3 align-items-center">
+            <span class="badge-accent">5 nights</span>
+            <span class="badge bg-white text-dark thin">Private villas & resorts</span>
+            <div class="ms-3 text-white thin">From <strong>$1,299</strong> / person</div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
+          <a href="#booking" class="btn btn-lg enquire-btn shadow-lg">Book this trip</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main class="container my-5">
+    <div class="row g-4">
+      <div class="col-lg-8">
+        <!-- Highlights -->
+        <section class="mb-4" data-aos="fade-up">
+          <div class="row g-3">
+            <div class="col-md-4 dest-card p-3">
+              <h5 class="mb-1">Top sights</h5>
+              <p class="muted small mb-0">Malé, coral reefs, island hopping</p>
+            </div>
+            <div class="col-md-4 dest-card p-3">
+              <h5 class="mb-1">Best time to visit</h5>
+              <p class="muted small mb-0">November — April (dry & sunny)</p>
+            </div>
+            <div class="col-md-4 dest-card p-3">
+              <h5 class="mb-1">Who it's for</h5>
+              <p class="muted small mb-0">Couples, honeymooners, luxury travelers</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Gallery -->
+        <section class="mb-4" data-aos="fade-up" data-aos-delay="80">
+          <h3 class="h5 mb-3">Gallery</h3>
+          <div class="row g-2 gallery">
+            <div class="col-6 col-md-4"><img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=800&q=60" alt="maldives1" loading="lazy"></div>
+            <div class="col-6 col-md-4"><img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=60" alt="maldives2" loading="lazy"></div>
+            <div class="col-12 col-md-4"><img src="https://images.unsplash.com/photo-1524492449090-1a11b7225f8b?auto=format&fit=crop&w=1200&q=60" alt="maldives3" loading="lazy"></div>
+          </div>
+        </section>
+
+        <!-- About -->
+        <section id="about" class="mb-4" data-aos="fade-up" data-aos-delay="120">
+          <h3 class="h5 mb-3">About Maldives</h3>
+          <p class="muted">The Maldives is an archipelago of over 1,000 islands in the Indian Ocean, famed for its clear blue waters, coral reefs, and luxury resorts. This curated package includes overwater villa stay, private transfers, snorkeling excursions, and sunset cruises.</p>
+        </section>
+
+        <!-- Itinerary -->
+        <section class="mb-4 fade-in-up" data-aos="fade-up" data-aos-delay="160">
+          <h3 class="h5 mb-3">Sample itinerary</h3>
+          <div class="timeline">
+            <div class="item">
+              <strong>Day 1 — Arrival & Relax</strong>
+              <div class="muted small">Private transfer to resort. Evening at leisure on your villa deck.</div>
+            </div>
+            <div class="item">
+              <strong>Day 2 — Snorkeling & Island Hopping</strong>
+              <div class="muted small">Guided snorkeling and visits to nearby islands.</div>
+            </div>
+            <div class="item">
+              <strong>Day 3 — Spa & Sunset Cruise</strong>
+              <div class="muted small">Morning spa treatment. Evening sunset cruise with drinks.</div>
+            </div>
+            <div class="item">
+              <strong>Day 4 — Leisure & Water Sports</strong>
+              <div class="muted small">Enjoy kayaking, paddleboarding, or simply relax on the beach.</div>
+            </div>
+            <div class="item">
+              <strong>Day 5 — Departure</strong>
+              <div class="muted small">Transfer to airport after breakfast.</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Map -->
+        <section class="mb-5" data-aos="fade-up" data-aos-delay="240">
+          <h3 class="h5 mb-3">Where you'll go</h3>
+          <div class="dest-card p-0">
+            <iframe src="https://www.google.com/maps?q=maldives&output=embed" style="width:100%; min-height:300px; border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </section>
+      </div>
+
+      <!-- Booking card -->
+      <aside class="col-lg-4">
+        <div class="booking-card" id="booking" data-aos="fade-left">
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <div>
+              <div class="thin small">Starting from</div>
+              <div class="price">$1,299 <span class="thin small">/ person</span></div>
+            </div>
+            <div class="text-end">
+              <div class="badge bg-success">Popular</div>
+            </div>
+          </div>
+
+          <form onsubmit="event.preventDefault(); handleBooking();" class="mt-3">
+            <div class="mb-2">
+              <label class="form-label small">Travel dates</label>
+              <div class="d-flex gap-2">
+                <input type="date" class="form-control form-control-sm" required>
+                <input type="date" class="form-control form-control-sm" required>
+              </div>
+            </div>
+
+            <div class="mb-2">
+              <label class="form-label small">Guests</label>
+              <select class="form-select form-select-sm" required>
+                <option>1 Adult</option>
+                <option>2 Adults</option>
+                <option>2 Adults, 1 Child</option>
+              </select>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label small">Accommodation</label>
+              <select class="form-select form-select-sm" required>
+                <option>Overwater Villa</option>
+                <option>Beachfront Suite (+$300)</option>
+                <option>Private Island Villa (+$800)</option>
+              </select>
+            </div>
+
+            <div class="d-grid">
+              <button class="btn btn-primary btn-lg">Reserve Now</button>
+            </div>
+          </form>
+
+          <div class="mt-3 small muted">
+            <strong>What's included</strong>
+            <ul class="mb-0">
+              <li>4 nights villa stay</li>
+              <li>Return transfers</li>
+              <li>Snorkeling & sunset cruise</li>
+            </ul>
+          </div>
+
+          <div class="mt-3 text-center">
+            <a href="mailto:info@exclusivetrips.com" class="small">Or email us to customise</a>
+          </div>
+        </div>
+
+        <!-- Promo card -->
+        <div class="dest-card p-3 mt-4" data-aos="zoom-in" data-aos-delay="120">
+          <h6 class="mb-1">Need flexible dates?</h6>
+          <p class="muted small mb-2">Our specialists can tailor dates, flights and add-on experiences.</p>
+          <button class="btn btn-outline-primary btn-sm w-100">Contact a specialist</button>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <!-- CONTACT / FOOTER -->
+  <section id="contact" class="py-5" style="background:#fff7f0;">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 text-center" data-aos="fade-up">
+          <h4 class="mb-2">Get in touch</h4>
+          <p class="muted mb-3">Have a question about this trip or want a private itinerary? Send us a message.</p>
+          <a href="mailto:info@exclusivetrips.com" class="btn enquire-btn">Email us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-3 text-center muted small">
+    &copy; 2025 Exclusive Trips • Designed with ❤️
+  </footer>
+
+  <!-- Bootstrap & AOS scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 900, once: true });
+
+    function handleBooking() {
+      const button = event.target.querySelector('button[type="submit"], .btn-primary');
+      if (button) {
+        button.disabled = true;
+        button.innerHTML = 'Reserving...';
+      }
+      setTimeout(() => {
+        alert('Reservation requested — our team will contact you to confirm details.');
+        if (button) {
+          button.disabled = false;
+          button.innerHTML = 'Reserve Now';
+        }
+        document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+      }, 1000);
+    }
+  </script>
+</body>
+</html>
